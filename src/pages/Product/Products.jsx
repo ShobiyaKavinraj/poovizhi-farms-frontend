@@ -22,24 +22,7 @@ const navigate = useNavigate();
   //     .then(res => setProducts(res.data))
   //     .catch(err => console.error('Error fetching products:', err));
   // }, []);
- useEffect(() => {
-    const fetchProducts = async () => {
-      try {
-        const res = await axios.get(
-          "https://poovizhi-farms-backend.onrender.com/api/products",
-          {
-            withCredentials: true
-          }
-        );
 
-        setProducts(res.data);
-      } catch (err) {
-        console.error("Error fetching products:", err);
-      }
-    };
-
-    fetchProducts();
-  }, []);
   const handleQuantityChange = (id, delta) => {
     setQuantities(prev => ({
       ...prev,
