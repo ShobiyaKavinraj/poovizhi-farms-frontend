@@ -1,0 +1,176 @@
+
+/* Main container */
+.home-container {
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  padding: 40px 20px;
+  max-width: 100vw;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+.video-center {
+  width: 80%;
+  max-width: 900px;
+  height: 70px;
+  margin: 30px auto 40px;
+  background: linear-gradient(135deg, #429b51, #5bcfc6);
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(74, 144, 226, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 0 20px;
+  box-sizing: border-box;
+  cursor: default;
+  user-select: none;
+}
+
+.video-heading {
+  margin-bottom: 20px;
+  font-size: 28px;
+  font-weight: 700;
+  color: #f0f4f8;
+  text-transform: capitalize;
+  letter-spacing: 1.2px;
+  position: relative;
+  margin: 0;
+  padding-bottom: 8px;
+  text-align: center;
+  justify-content: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.video-heading::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 180px;      
+  height: 5px;       
+  background: linear-gradient(90deg, #5453c7, #49c231, #7f00ff);
+  border-radius: 3px;
+  box-shadow: 0 0 12px 4px rgba(0, 191, 255, 0.7);
+}
+
+
+/* Scroll container */
+.video-scroll-container {
+  display: flex;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  gap: 20px;
+  padding: 10px;
+  cursor: grab;
+  max-width: 100%;
+  box-sizing: border-box;
+  scrollbar-width: none; /* Firefox */
+}
+.video-scroll-container::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Edge */
+}
+
+.video-scroll-container.dragging {
+  cursor: grabbing;
+  user-select: none;
+}
+
+/* Video wrapper */
+.video-wrapper {
+  flex: 0 0 calc(25% - 15px); /* 4 videos per view on desktop */
+  scroll-snap-align: start;
+  position: relative;
+}
+
+/* Video player */
+.video {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  display: block;
+}
+
+/* Title */
+/* .video-title {
+  text-align: center;
+  font-size: 16px;
+  margin-top: 10px;
+  color: black;
+} */
+.video-title {
+  font-family: 'Poppins', sans-serif;
+  font-weight:bold 300; /* Thin */
+  font-size: 16px;
+  text-align: center;
+  margin-top: 10px;
+  color: #141313; /* Optional: dark gray text */
+}
+
+/* Volume and close buttons */
+.volume-control {
+  margin-top: 10px;
+}
+
+.video-close-btn {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  /* background-color: #e53935; */
+  color: rgb(19, 17, 17);
+  border: none;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .video-wrapper {
+    flex: 0 0 calc(33.33% - 15px); /* 3 per view on tablets */
+  }
+}
+
+@media (max-width: 768px) {
+  .video-wrapper {
+    flex: 0 0 calc(50% - 10px); /* 2 per view on mobile */
+  }
+
+ 
+@media (max-width: 768px) {
+  .video-center {
+    height: 90px;         /* increased height */
+    padding: 0 20px;      /* horizontal padding */
+    display: flex;        /* make sure flexbox */
+    align-items: center;  /* vertical centering */
+    justify-content: center; /* horizontal centering */
+  }
+  .video-heading {
+    font-size: 1.5rem;
+    padding-bottom: 6px;
+    margin: 0;            /* REMOVE margin-bottom to keep vertical centering */
+    letter-spacing: 0.8px;
+    text-align: center;
+    line-height: 1;
+  }
+  .video-heading::after {
+    width: 120px; /* shorter underline on mobile */
+    height: 4px;  /* slightly thinner */
+  }
+}
+
+
+
+  .video-scroll-container {
+    gap: 10px;
+    padding: 5px;
+  }
+
+  .video-title {
+    font-size: 14px;
+  }
+}

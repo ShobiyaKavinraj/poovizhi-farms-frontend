@@ -1,0 +1,70 @@
+.thank-you-page {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+.thank-you-page h1 {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.thank-you-page p {
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.continue-button {
+  margin-top: 30px;
+  padding: 12px 24px;
+  font-size: 1rem;
+  background-color: #6fac4b;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.continue-button:hover {
+  background-color: #2e742e;
+}
+
+/* Responsive styling */
+@media (max-width: 768px) {
+  .thank-you-page {
+    padding: 30px 15px;
+  }
+
+  .thank-you-page h1 {
+    font-size: 2rem;
+  }
+
+  .thank-you-page p {
+    font-size: 1rem;
+  }
+
+  .continue-button {
+    width: 100%;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .thank-you-page h1 {
+    font-size: 1.75rem;
+  }
+
+  .thank-you-page p {
+    font-size: 0.95rem;
+  }
+
+  .continue-button {
+    padding: 10px;
+    font-size: 0.95rem;
+  }
+}

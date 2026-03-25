@@ -1,0 +1,135 @@
+/* General Container */
+.login-container {
+    max-width: 400px;
+    margin: 60px auto;
+    background: #f5f5f5; /* Light gray background */
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+}
+
+/* Headings */
+.login-container h2 {
+    margin-bottom: 24px;
+    color: #333333;
+    font-size: 28px;
+    font-weight: 600;
+}
+
+/* Form Inputs */
+.login-container input {
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 16px;
+    background-color: #e0e0e0; /* Light gray input fields */
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-size: 16px;
+    transition: border 0.3s ease;
+}
+
+.login-container input:focus {
+    background-color: #d3d3d3; /* Slightly darker gray on focus */
+    border-color: #587464;
+    outline: none;
+}
+
+/* Buttons */
+.login-button,
+.social-button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    background-color: #27ae60; /* Green button */
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background 0.3s ease;
+}
+
+.login-button:hover {
+    background-color: #219150;
+}
+
+/* Error & Success Messages */
+.error {
+    color: #e74c3c;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+.success {
+    color: #2ecc71;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+/* Extra Links */
+.extra-links {
+    margin-top: 20px;
+}
+
+.link {
+    color: #2980b9;
+    cursor: pointer;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.link:hover {
+    color: #1c5980;
+    text-decoration: underline;
+}
+
+/* Social Login */
+.social-login {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.social-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background-color: #f1f1f1; /* Light gray for social buttons */
+    color: #333;
+    border: 1px solid #ddd;
+}
+
+.social-button.google {
+    background-color: #ffffff;
+}
+
+.social-button.facebook {
+    background-color: #3b5998;
+    color: #ffffff;
+}
+
+.social-button:hover {
+    opacity: 0.9;
+}
+
+/* Close Button */
+.close-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: transparent;
+    border: none;
+    font-size: 22px;
+    cursor: pointer;
+    color: #999;
+    transition: color 0.2s ease;
+}
+
+.close-button:hover {
+    color: #333;
+}

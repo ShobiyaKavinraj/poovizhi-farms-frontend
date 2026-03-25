@@ -1,0 +1,200 @@
+/* Root Styles */
+:root {
+    --primary: #27ae60;
+    --light-bg: #f8f9fa;
+    --dark-text: #2c3e50;
+    --muted-text: #7f8c8d;
+    --border-radius: 16px;
+    --shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+    --glass-bg: rgba(255, 255, 255, 0.7);
+    --glass-border: rgba(255, 255, 255, 0.25);
+    --hover-scale: scale(1.03);
+  }
+  
+  /* Heading */
+  .products-heading {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--dark-text);
+    text-align: center;
+    margin: 2rem 0 1rem;
+  }
+  
+  /* Grid Layout */
+  .product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+  }
+  
+  /* Product Card */
+  .product-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--border-radius);
+    padding: 1rem;
+    box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: var(--transition);
+    position: relative;
+  }
+  
+  .product-card:hover {
+    transform: var(--hover-scale);
+  }
+  
+  /* Image Section */
+  .product-img-wrapper {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 1rem;
+    background: #ecf0f1;
+  }
+  
+  .product-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+  }
+  
+  .product-card:hover .product-img {
+    transform: scale(1.05);
+  }
+  
+  /* Title & Price */
+  .product-card h3 {
+    font-size: 1.2rem;
+    color: var(--dark-text);
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+  }
+  
+  .selected-price,
+  .quantity {
+    font-size: 0.95rem;
+    color: var(--muted-text);
+    margin: 0.2rem 0;
+  }
+  
+  /* Variants */
+  .variant-selector {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.4rem;
+    margin: 0.5rem 0;
+  }
+  
+  .variant-btn {
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    padding: 0.3rem 0.7rem;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: var(--transition);
+  }
+  
+  .variant-btn:hover,
+  .variant-btn.active {
+    background-color: var(--primary);
+    color: #fff;
+    border-color: var(--primary);
+  }
+  
+  /* Quantity Controls */
+  .quantity-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.75rem;
+    margin: 0.5rem 0;
+  }
+  
+  .quantity-controls button {
+    background-color: #dfe6e9;
+    border: none;
+    border-radius: 6px;
+    padding: 0.3rem 0.7rem;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: var(--transition);
+  }
+  
+  .quantity-controls button:hover {
+    background-color: #b2bec3;
+  }
+  
+  .quantity-controls span {
+    font-size: 1rem;
+    font-weight: 500;
+    min-width: 20px;
+    text-align: center;
+  }
+  
+  /* Icon Row */
+  .icon-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+    padding: 0 0.5rem;
+  }
+  
+  /* Wishlist Icon */
+  .wishlist-icon {
+    font-size: 1.5rem;
+    color: #e74c3c;
+    cursor: pointer;
+    transition: var(--transition);
+  }
+  
+  .wishlist-icon:hover {
+    transform: scale(1.2);
+  }
+  
+  /* Add to Cart Icon */
+  .add-to-cart-icon {
+    font-size: 1.5rem;
+    color: var(--dark-text);
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: var(--transition);
+  }
+  
+  .add-to-cart-icon:hover {
+    transform: scale(1.2);
+  }
+  
+  .add-to-cart-icon:disabled {
+    color: #bdc3c7;
+    cursor: not-allowed;
+  }
+  
+  /* Responsive Typography */
+  @media (max-width: 768px) {
+    .products-heading {
+      font-size: 1.8rem;
+    }
+  
+    .variant-btn {
+      font-size: 0.75rem;
+    }
+  
+    .quantity-controls button,
+    .add-to-cart-icon,
+    .wishlist-icon {
+      font-size: 1.2rem;
+    }
+  }
+  

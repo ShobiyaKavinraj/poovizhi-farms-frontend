@@ -1,0 +1,279 @@
+
+.poovizhi-farms {
+  
+  width: 100%;
+  font-family: 'Poppins', sans-serif;
+  color: #333;
+  padding: 0;
+  box-sizing: border-box;
+  background: none;
+}
+  
+/* === Header with Back Button and Centered Title === */
+.about-header {
+  width: 100% ;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  height: 90px;
+  background-color: #4d4949;
+  border-bottom: 1px solid #444;
+}
+
+.about_headline {
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-align: center;
+  margin: 0;
+  color: #fff;
+  flex-grow: 1;
+  padding: 0 2rem;
+}
+
+.about-back-bttn {
+  position: absolute;
+  left: 1rem;
+  background-color: transparent;
+  border: none;
+  font-size: 1.2rem;
+  color: #fff;
+  cursor: pointer;
+  padding: 0.3rem 0.6rem;
+}
+
+.about-back-bttn:hover {
+  color: #ddd;
+}
+/* General Section Styling */
+section {
+  margin-bottom: 60px;
+  padding: 30px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+section:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+
+.poovizhi-heading {
+  color: #2e7d32;
+  margin: 20px 0 40px; 
+  font-weight: 700;
+  font-size: 28px; 
+  text-align: center;
+  text-transform: uppercase;
+  line-height: 1.3;
+}
+
+
+.poovizhi-subheading {
+  color: #2e7d32; /* Green */
+  margin-bottom: 15px;
+  font-weight: 600;
+  font-size: 28px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  line-height: 1.3;
+  text-transform: capitalize;
+}
+
+/* Paragraphs */
+p {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #555;
+  margin-bottom: 15px;
+}
+
+/* Introduction Section */
+.intro {
+  text-align: center;
+  padding: 40px;
+  background: linear-gradient(135deg, #e8f5e9 0%, #ffffff 100%);
+}
+
+.intro p {
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 18px;
+}
+
+/* Organic Farming Section */
+.organic-farming img {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  border-radius: 8px;
+  margin: 20px 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.organic-farming .references {
+  font-size: 14px;
+  color: #777;
+}
+
+.organic-farming .references a {
+  color: #2e7d32;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.organic-farming .references a:hover {
+  color: #1b5e20;
+  text-decoration: underline;
+}
+
+/* Production Team Section */
+.production-team {
+  background: #e8f5e9;
+}
+
+.production-team p {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* Mission and Goals Sections */
+.mission ul, .goals ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.mission ul li, .goals ul li {
+  font-size: 16px;
+  line-height: 1.8;
+  margin-bottom: 15px;
+  padding: 15px;
+  background: #f1f8f1;
+  border-left: 4px solid #2e7d32;
+  border-radius: 4px;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.mission ul li:hover, .goals ul li:hover {
+  background: #e8f5e9;
+  transform: translateX(5px);
+}
+
+.mission ul li strong, .goals ul li strong {
+  color: #2e7d32;
+}
+
+/* Animations */
+section {
+  animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive Design with Own Class Names */
+@media (max-width: 768px) {
+  /* .poovizhi-farms {
+    padding: 20px 15px;
+  } */
+
+  /* About Header */
+  .about-header {
+    height: auto;             /* shrink header height */
+    padding: 0.8rem 1rem;       
+    justify-content: flex-start;
+  }
+
+  .about_headline {
+    font-size: 20px;
+    padding: 0;
+    margin: 0 auto;           /* center title */
+  }
+
+  .about-back-bttn {
+    font-size: 16px;
+    padding: 0.2rem 0.5rem;
+  }
+
+  /* Main Heading */
+  .poovizhi-heading {
+    font-size: 24px;
+    margin-top: 0;
+    padding-top: 10px;
+  }
+
+  /* Subheadings */
+  .poovizhi-subheading {
+    font-size: 22px;
+    margin-bottom: 10px;
+  }
+
+  /* Sections */
+  .intro,
+  .organic-farming,
+  .production-team,
+  .mission,
+  .goals {
+    padding: 20px;
+    margin-bottom: 40px;
+  }
+
+  /* Paragraphs */
+  .intro p,
+  .organic-farming p,
+  .production-team p,
+  .mission p,
+  .goals p {
+    font-size: 14px;
+  }
+
+  /* Intro Section */
+  .intro {
+    padding: 30px 20px;
+  }
+
+  /* Organic Farming Images */
+  .organic-farming img {
+    max-width: 100%;
+    margin: 15px 0;
+  }
+
+  /* Lists */
+  .mission ul li,
+  .goals ul li {
+    font-size: 14px;
+    padding: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Main Heading */
+  .poovizhi-heading {
+    font-size: 22px;
+  }
+
+  /* Subheadings */
+  .poovizhi-subheading {
+    font-size: 18px;
+  }
+
+  /* Intro Paragraphs */
+  .intro p {
+    font-size: 15px;
+  }
+
+  /* Lists */
+  .mission ul li,
+  .goals ul li {
+    padding: 8px;
+  }
+}

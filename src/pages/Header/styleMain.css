@@ -1,0 +1,425 @@
+/* === Reset and Base === */
+body, main {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* === Header Layout === */
+.main {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.6rem 1rem;
+  background-color: #aed6aa;
+ box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+  height: 60px;
+  position: relative;
+  z-index: 100;
+}
+
+.header-container {
+  position: relative;
+}
+
+/* === Header Left === */
+.header-left .heading {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #1d531f;
+}
+
+/* === Hamburger Button === */
+.hamburger {
+  display: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(46, 125, 50, 0.1);
+  backdrop-filter: blur(4px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  cursor: pointer;
+  z-index: 1100;
+  position: relative;
+  transition: background 0.3s ease;
+}
+
+.hamburger:hover {
+  background: rgba(46, 125, 50, 0.2);
+}
+
+.hamburger span {
+  height: 3px;
+  width: 20px;
+  background-color: #2e7d32;
+  border-radius: 2px;
+  margin: 3px 0;
+  transition: 0.3s ease;
+}
+
+.hamburger.open span:nth-child(1) {
+  transform: translateY(6px) rotate(45deg);
+}
+.hamburger.open span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.open span:nth-child(3) {
+  transform: translateY(-6px) rotate(-45deg);
+}
+
+/* === Header Center === */
+.header-center {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.header-center ul {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.header-center ul li a {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.header-center ul li a:hover {
+  color: #2e7d32;
+}
+
+/* === Header Right === */
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.header-right .search-icon,
+.wishlist-icon,
+.cart-icon,
+.user-icon {
+  position: relative;
+  cursor: pointer;
+  color: #333;
+  font-size: 1.4rem;
+  transition: color 0.3s;
+}
+
+.header-right .search-icon:hover,
+.wishlist-icon:hover,
+.cart-icon:hover,
+.user-icon:hover {
+  color: #2e7d32;
+}
+
+.count-badge {
+  position: absolute;
+  top: -6px;
+  right: -8px;
+  background: #e53935;
+  color: #fff;
+  font-size: 12px;
+  padding: 2px 6px;
+  border-radius: 50%;
+}
+
+/* === Dropdown Menu (under user icon) === */
+.dropdown-menus {
+  position: absolute;
+  top: 40px;
+  right: 0;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+  width: 160px;
+  padding: 0.3rem 0;
+  z-index: 1200;
+  font-size: 0.85rem;
+}
+
+.dropdown-menus ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.dropdown-menus li {
+  padding: 0.5rem 0.8rem;
+  cursor: pointer;
+  color: #333;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; 
+  text-align: left;  
+  transition: all 0.2s ease;
+}
+
+.dropdown-menus li:hover {
+  background-color: #e8f5e9;
+  color: #2e7d32;
+}
+
+.dropdown-menus li a {
+  color: inherit;
+  text-decoration: none;
+  flex: 1;
+  width: 100%;
+}
+.sidebar-close {
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  padding: 0.3rem 0.7rem;
+  cursor: pointer;
+  color: #333;
+  position: absolute;
+  top: 0.4rem;
+  right: 0.6rem;
+  z-index: 1101;
+  transition: color 0.3s ease;
+}
+
+.sidebar-close:hover {
+  color: #2b2929;
+}
+
+/* === Sidebar Menu (Hamburger) === */
+.sidebar {
+  position: fixed;
+  top: 60px;
+  left: 0;
+  width: 280px; /* 👈 Reduced width */
+  max-width: 85%;
+  height: calc(100% - 60px); /* 👈 Full height minus header */
+  background: #b3aeae;
+  border-radius: 0 8px 8px 0;
+  box-shadow: 4px 0 15px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  display: none;
+  flex-direction: column;
+  z-index: 1050;
+  transition: transform 0.3s ease;
+}
+
+.sidebar.active {
+  display: flex;
+  transform: translateX(0);
+}
+
+
+.sidebar ul {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.sidebar li {
+  display: table-row;
+}
+
+.sidebar a {
+  display: table-cell;
+  padding: 0.75rem;
+  border-bottom: 1px solid #eee;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 500;
+  color: #2e302e;
+  font-size: 0.95rem;
+  transition: background 0.3s;
+}
+
+.sidebar a:hover {
+  background-color: #bec7c2;
+}
+
+.sidebar a:not(:last-child) {
+  border-right: 1px solid #e6d0d0;
+}
+
+/* === Sidebar Backdrop === */
+.sidebar-backdrop.show {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(4px);
+  z-index: 1000;
+}
+
+/* === Modal === */
+.modal-content .close-button {
+  font-size: 16px;
+  background: transparent;
+  border: none;
+  color: #444;
+  position: absolute;
+  top: 0.5rem;
+  right: 0.75rem;
+  cursor: pointer;
+}
+
+.modal-overlay {
+  backdrop-filter: blur(4px);
+  background: rgba(0, 0, 0, 0.4);
+}
+
+/* === Responsive Styles === */
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+  }
+@media (max-width: 768px) {
+  .sidebar {
+    height: 100%;
+    top: 0;
+    padding-top: 4rem;
+  }
+}
+  .header-center {
+    display: none;
+  }
+
+  .main {
+    justify-content: space-between;
+  }
+
+  .header-left {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 101;
+  }
+
+  .header-right {
+    margin-left: auto;
+  }
+
+  .dropdown-menus {
+    top: 50px;
+    right: 10px;
+  }
+}
+/* === Mobile View Enhancements === */
+@media (max-width: 768px) {
+  /* Center logo in header */
+  .header-left {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 101;
+  }
+
+  /* Hide desktop menu */
+  .header-center {
+    display: none;
+  }
+
+  /* Only show user icon in mobile header */
+  .header-right {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+  }
+  .header-right .search-icon,
+  .header-right .wishlist-icon,
+  .header-right .cart-icon {
+    display: none;
+  }
+
+  /* Sticky Bottom Nav (Glassmorphism) */
+  .mobile-bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 58px;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(12px);
+    border-top: 1px solid rgba(255, 255, 255, 0.25);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    z-index: 999;
+    padding: 0 5px;
+  }
+
+  /* Icon Styles */
+  .mobile-bottom-nav a {
+    color: #333;
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    transition: transform 0.2s ease, color 0.3s ease;
+  }
+
+  .mobile-bottom-nav a:hover {
+    color: #2e7d32;
+    transform: scale(1.2);
+  }
+
+  /* Badge for cart/wishlist */
+  .mobile-bottom-nav .count-badge {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    background: #e53935;
+    color: white;
+    font-size: 10px;
+    padding: 2px 5px;
+    border-radius: 50%;
+    font-weight: bold;
+  }
+
+  /* WhatsApp Icon Special Style */
+  .mobile-bottom-nav .whatsapp-icon {
+    color: #25d366;
+  }
+  .mobile-bottom-nav .whatsapp-icon:hover {
+    color: #128c7e;
+  }
+
+  /* Sidebar animation */
+  .sidebar {
+    transform: translateX(-100%);
+    display: flex;
+  }
+  .sidebar.active {
+    transform: translateX(0);
+    transition: transform 0.3s ease-in-out;
+  }
+}
+
+/* Hide mobile nav on desktop */
+@media (min-width: 769px) {
+  .mobile-bottom-nav {
+    display: none;
+  }
+}

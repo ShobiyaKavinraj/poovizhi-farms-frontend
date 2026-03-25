@@ -1,0 +1,163 @@
+.dashboard-layout {
+  display: flex;
+  flex-direction: column;
+  background-color: #f5f5f5; /* overall background */
+  min-height: 100vh;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.dashboard-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #49644a;
+  color: white;
+  padding: 1rem;
+  position: relative;
+  text-align: center;
+}
+
+.dashboard-header .title {
+  font-size: 1.4rem;
+}
+
+.dashboard-header .back-btn {
+  position: absolute;
+  left: 1rem;
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  color: white;
+  cursor: pointer;
+}
+
+.dashboard-main-section {
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+/* Sidebar box with light gray */
+.dashboard-sidebar {
+  background-color: #eeeeee;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.05);
+  min-width: 220px;
+  height: fit-content;
+  
+}
+
+.dashboard-sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.dashboard-sidebar li {
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.dashboard-sidebar li:hover {
+  color: #4caf50;
+}
+
+.dashboard-sidebar li svg {
+  margin-right: 0.5rem;
+}
+
+.dashboard-sidebar a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Main content wrapper box */
+.dashboard-content {
+  flex: 1;
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.05);
+}
+
+/* Section boxes inside content */
+.welcome-section,
+.order-history,
+.account-details,
+.saved-addresses {
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  background-color: #f9f9f9; /* light gray inner box */
+}
+
+.dashboard-content h3 {
+  margin-top: 0;
+  color: #314431;
+  font-size: 1.1rem;
+}
+
+.order-btn {
+  margin-top: 0.5rem;
+  background-color: #304231;
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.order-btn:hover {
+  background-color: #43a047;
+}
+
+.address-card {
+  background-color: #f0f0f0;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  border-radius: 6px;
+}
+
+.logout-text {
+  /* color: #d32f2f; */
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.logout-item {
+  /* color: #d32f2f; */
+  color: rgb(51, 50, 50);
+  
+}
+
+@media (max-width: 768px) {
+  .dashboard-main-section {
+    flex-direction: column;
+  }
+
+  .dashboard-sidebar {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+
+  .dashboard-header {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .dashboard-header .title {
+    font-size: 1.1rem;
+  }
+
+  .dashboard-content {
+    padding: 1rem;
+  }
+}

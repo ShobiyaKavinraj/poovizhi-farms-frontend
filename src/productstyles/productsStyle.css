@@ -1,0 +1,250 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f1f5f9; /* Softer background color */
+  color: #1e293b; /* Darker text for better contrast */
+}
+
+/* Products Heading */
+.products-heading {
+  text-align: center;
+  font-size: 2rem; /* Reduced font size */
+  margin: 1.5rem 0; /* Reduced margin */
+  color: #1e40af; /* Vibrant blue for heading */
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+}
+
+.products-heading::after {
+  content: '';
+  width: 80px; /* Slightly smaller underline */
+  height: 3px;
+  background: linear-gradient(to right, #3b82f6, #ec4899); /* Vibrant blue to pink gradient */
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Product Grid */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 columns */
+  grid-template-rows: repeat(4, auto); /* 4 rows */
+  gap: 1.5rem; /* Reduced gap between cards */
+  padding: 1.5rem; /* Reduced padding */
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Product Card */
+.product-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  padding-bottom: 1rem; /* Reduced padding */
+  display: flex;
+  flex-direction: column;
+}
+
+.product-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+/* Wishlist Icon */
+.wishlist-icons {
+  position: absolute;
+  top: 8px; /* Adjusted for compact layout */
+  right: 8px;
+  font-size: 1.5rem; /* Slightly smaller icon */
+  cursor: pointer;
+  color: #dc2626; /* Vibrant red for wishlist */
+  transition: transform 0.2s ease;
+  z-index: 10;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 50%;
+  width: 30px; /* Smaller size */
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wishlist-icons:hover {
+  transform: scale(1.2);
+}
+
+/* Product Image Wrapper */
+.product-img-wrapper {
+  width: 100%;
+  height: 200px; /* Fixed height for square aspect ratio */
+  aspect-ratio: 1 / 1; /* Ensure 1:1 aspect ratio (square) */
+  overflow: hidden;
+  background: #f9fafb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.product-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: transform 0.5s ease;
+}
+
+.product-img:hover {
+  transform: scale(1.1);
+}
+
+/* Product Title */
+.product-card h3 {
+  font-size: 1.2rem; /* Reduced font size */
+  margin: 0.8rem 0; /* Reduced margin */
+  color: #1e293b;
+  text-align: center;
+  text-transform: capitalize;
+}
+
+/* Variant Selector */
+.variant-selector {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  justify-content: center;
+  margin: 0.4rem 0.8rem; /* Reduced margin */
+}
+
+.variant-btn {
+  background: #e5e7eb;
+  border: none;
+  padding: 0.4rem 0.8rem; /* Reduced padding */
+  border-radius: 16px;
+  font-size: 0.8rem; /* Reduced font size */
+  cursor: pointer;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.variant-btn.active,
+.variant-btn:hover {
+  background: #3b82f6; /* Vibrant blue */
+  color: #fff;
+}
+
+/* Selected Price and Quantity */
+.selected-price,
+.quantity {
+  text-align: center;
+  font-size: 0.9rem; /* Reduced font size */
+  color: #6b7280;
+  margin: 0.4rem 0; /* Reduced margin */
+}
+
+.selected-price {
+  font-weight: bold;
+  color: #ec4899; /* Vibrant pink for price */
+}
+
+/* Quantity Controls */
+.quantity-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem; /* Reduced gap */
+  margin: 0.8rem 0; /* Reduced margin */
+}
+
+.quantity-controls button {
+  background: #3b82f6; /* Vibrant blue */
+  border: none;
+  width: 30px; /* Smaller buttons */
+  height: 30px;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 1rem; /* Reduced font size */
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.quantity-controls button:hover {
+  background: #2563eb; /* Darker blue on hover */
+}
+
+.quantity-controls span {
+  font-size: 1rem; /* Reduced font size */
+  font-weight: bold;
+  color: #1e293b;
+}
+
+/* Add to Cart Button */
+.add-to-cart {
+  display: block;
+  width: 85%; /* Slightly wider for compact layout */
+  margin: 0.8rem auto; /* Reduced margin */
+  padding: 0.6rem; /* Reduced padding */
+  background: linear-gradient(to right, #3b82f6, #22c55e); /* Blue to green gradient */
+  border: none;
+  border-radius: 20px;
+  color: #fff;
+  font-size: 0.9rem; /* Reduced font size */
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.add-to-cart:hover {
+  background: linear-gradient(to right, #2563eb, #16a34a); /* Darker gradient on hover */
+  transform: scale(1.05);
+}
+
+.add-to-cart:disabled {
+  background: #bdc3c7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Remove Responsive Breakpoints to Enforce 4x4 Grid */
+@media (max-width: 1200px) {
+  .product-grid {
+    grid-template-columns: repeat(4, 1fr); /* Maintain 4 columns */
+    grid-template-rows: repeat(4, auto); /* Maintain 4 rows */
+  }
+}
+
+@media (max-width: 900px) {
+  .product-grid {
+    grid-template-columns: repeat(4, 1fr); /* Maintain 4 columns */
+    grid-template-rows: repeat(4, auto); /* Maintain 4 rows */
+  }
+
+  .products-heading {
+    font-size: 1.8rem;
+  }
+
+  .product-img-wrapper {
+    height: 180px;
+  }
+
+  .product-card h3 {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .product-grid {
+    grid-template-columns: repeat(4, 1fr); /* Maintain 4 columns */
+    grid-template-rows: repeat(4, auto); /* Maintain 4 rows */
+  }
+
+  .product-img-wrapper {
+    height: 160px;
+  }
+
+  .add-to-cart {
+    width: 90%;
+  }
+}

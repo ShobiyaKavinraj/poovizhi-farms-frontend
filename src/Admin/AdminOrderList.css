@@ -1,0 +1,127 @@
+/* AdminOrderList.css */
+
+.admin-order-panel {
+  padding: 2rem;
+  font-family: Arial, sans-serif;
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+.admin-order-panel h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+  color: #2e7d32;
+}
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  justify-content: space-between;
+}
+
+.filters input,
+.filters select,
+.filters button {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  min-width: 150px;
+}
+
+.filters button {
+  background-color: #2e7d32;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.filters button:hover {
+  background-color: #1b5e20;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1.5rem;
+}
+
+table thead {
+  background-color: #e8f5e9;
+}
+
+table th,
+table td {
+  padding: 0.75rem 1rem;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+table td select {
+  padding: 0.3rem;
+  border-radius: 4px;
+}
+
+/* Responsive table (for mobile) */
+@media (max-width: 768px) {
+  table,
+  thead,
+  tbody,
+  th,
+  td,
+  tr {
+    display: block;
+    width: 100%;
+  }
+
+  thead {
+    display: none;
+  }
+
+  tr {
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    padding: 0.5rem;
+  }
+
+  td {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem;
+    border: none;
+    border-bottom: 1px solid #eee;
+  }
+
+  td::before {
+    content: attr(data-label);
+    font-weight: bold;
+    color: #555;
+  }
+}
+
+.pagination {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.pagination button {
+  margin: 0 0.3rem;
+  padding: 0.5rem 0.8rem;
+  border: none;
+  background-color: #c8e6c9;
+  color: #2e7d32;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.pagination button.active {
+  background-color: #2e7d32;
+  color: white;
+}
+
+.pagination button:hover {
+  background-color: #81c784;
+}

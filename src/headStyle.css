@@ -1,0 +1,222 @@
+/* Main container for the header */
+.header-container {
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+    padding: 10px 20px;
+  }
+  
+  /* Main section layout */
+  .main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  /* Left section (Logo and Nav links) */
+  .main1 {
+    display: flex;
+    align-items: center;
+  }
+  
+  /* Logo styling */
+  .heading {
+    font-size: 24px;
+    font-weight: bold;
+    color: #2e7d32;
+    display: flex;
+    align-items: center;
+  }
+  
+  /* Nav links */
+  .main11 ul {
+    display: flex;
+    list-style: none;
+    margin-left: 40px;
+  }
+  
+  .main11 li {
+    margin-right: 20px;
+    gap: 10px;
+  }
+  
+  .main11 li a {
+    color: #333;
+    font-size: 16px;
+    text-decoration: none;
+    padding: 10px;
+    transition: color 0.3s;
+  }
+  
+  .main11 li a:hover {
+    color: #2e7d32;
+  }
+  
+  /* Right section (Icons) */
+  .main2 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px; /* Reduced gap between icons */
+  }
+  
+  /* Icon container for search, wishlist, etc. */
+  .icons-container {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Reduced gap between icons */
+  }
+  
+  /* Individual icons styling */
+  .icons-container svg, .user-icon svg {
+    cursor: pointer;
+    color: #333;
+    transition: color 0.3s ease-in-out;
+  }
+  
+  .icons-container svg:hover, .user-icon svg:hover {
+    color: #2e7d32;
+  }
+  
+  /* Wishlist icon badge */
+  .wishlist-count {
+    position: absolute;
+    top: -8px;
+    right: -10px;
+    background: red;
+    color: white;
+    border-radius: 50%;
+    padding: 2px 6px;
+    font-size: 12px;
+  }
+  
+  /* Cart icon badge */
+  .cart-icon {
+    position: relative;
+  }
+  
+  /* User icon styling */
+  .user-icon {
+    position: relative;
+  }
+  
+  .user-icon svg {
+    font-size: 22px;
+  }
+  
+  /* Dropdown Menu for logged-in users */
+  .dropdown-menu {
+    position: absolute;
+    top: 30px;
+    right: 0;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    width: 150px;
+    padding: 10px 0;
+  }
+  
+  .dropdown-menu ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .dropdown-menu li {
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .dropdown-menu li:hover {
+    background-color: #f1f1f1;
+  }
+  
+  .dropdown-menu li a {
+    color: #333;
+    text-decoration: none;
+  }
+  
+  .dropdown-menu li a:hover {
+    color: #2e7d32;
+  }
+  
+  /* Modal styling for login, signup, forgot password */
+  .modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+  }
+  
+  .modal-content {
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    max-width: 400px;
+    width: 100%;
+    position: relative;
+  }
+  
+  .close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  
+  /* Buttons and links styling */
+  .link {
+    cursor: pointer;
+    color: #2e7d32;
+    font-weight: bold;
+    text-decoration: underline;
+  }
+  
+  .link:hover {
+    color: #1e5823;
+  }
+  
+  /* Modal content */
+  .login-button,
+  .social-button {
+    width: 100%;
+    padding: 10px;
+    background-color: #2e7d32;
+    border: none;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+    border-radius: 5px;
+  }
+  
+  .login-button:hover,
+  .social-button:hover {
+    background-color: #1e5823;
+  }
+  
+  /* Social login buttons */
+  .social-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  .social-button img {
+    width: 20px;
+    height: 20px;
+  }
+  

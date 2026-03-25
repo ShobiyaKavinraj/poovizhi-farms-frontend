@@ -1,0 +1,299 @@
+/* General styles for the header */
+.header-container {
+  background: #fff;
+  padding: 1rem 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Main flex container */
+.main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Left section (logo and navigation) */
+.main1 {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+/* Logo and heading */
+.heading {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #2e7d32; /* Green for farm theme */
+  text-transform: uppercase;
+  transition: transform 0.3s ease;
+}
+
+.heading:hover {
+  transform: scale(1.05);
+}
+
+/* Navigation */
+.main11 ul {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 0.5rem; /* Consistent spacing */
+}
+
+.main11 ul li {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.main11 ul li a {
+  color: #1e293b; /* Dark text from product grid */
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.main11 ul li a:hover {
+  background: #f1f5f9; /* Light gray from product grid */
+  color: #3b82f6; /* Blue from product grid */
+}
+
+/* Right section (icons) */
+.main2 {
+  display: flex;
+  align-items: center;
+  gap: 1rem; /* Consistent spacing */
+}
+
+/* Icons container */
+.icons-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem; /* Remove extra margins, use gap */
+}
+
+/* All icons (search, wishlist, cart, user) */
+.search-icon,
+.wishlist-icon,
+.cart-icon,
+.login-info {
+  color: #2e7d32; /* Unified green color */
+  transition: color 0.3s ease, transform 0.3s ease;
+  cursor: pointer;
+}
+
+.search-icon:hover,
+.wishlist-icon:hover,
+.cart-icon:hover,
+.login-info:hover {
+  color: #ec4899; /* Pink hover from product grid */
+  transform: scale(1.2);
+}
+
+/* Wishlist and cart specific styles */
+.wishlist-icon,
+.cart-icon {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+/* Wishlist and cart count badges */
+.wishlist-count,
+.cart-count {
+  position: absolute;
+  top: -8px;
+  right: -10px;
+  background: #ec4899; /* Pink from product grid */
+  color: #fff;
+  border-radius: 50%;
+  padding: 2px 6px;
+  font-size: 0.75rem;
+  font-weight: bold;
+}
+
+/* User icon and dropdown */
+.user-icon {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  min-width: 150px;
+  margin-top: 0.5rem;
+  z-index: 1000;
+  display: none;
+}
+
+.user-icon:hover .dropdown-menu,
+.dropdown-menu:hover {
+  display: block;
+}
+
+.dropdown-menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0.5rem 0;
+}
+
+.dropdown-menu ul li {
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  color: #1e293b;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.dropdown-menu ul li a {
+  color: #1e293b;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-menu ul li:hover {
+  background: #f1f5f9;
+  color: #3b82f6;
+}
+
+.dropdown-menu ul li:hover a {
+  color: #3b82f6;
+}
+
+/* Modal overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+/* Modal content */
+.modal-content {
+  background: #fff;
+  border-radius: 12px;
+  padding: 2rem;
+  max-width: 400px;
+  width: 90%;
+  position: relative;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  animation: slideIn 0.3s ease;
+}
+
+/* Close button */
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  color: #1e293b;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.close-button:hover {
+  color: #ec4899;
+}
+
+/* Modal animation */
+@keyframes slideIn {
+  from {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* General links */
+a {
+  text-decoration: none;
+  color: #1e293b;
+}
+
+a:hover {
+  color: #2e7d32;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .main {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .main1 {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .main11 ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .main2 {
+    gap: 0.5rem;
+  }
+
+  .heading {
+    font-size: 1.4rem;
+  }
+
+  .modal-content {
+    width: 95%;
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-container {
+    padding: 1rem;
+  }
+
+  .main11 ul li a {
+    padding: 0.5rem;
+    font-size: 0.9rem;
+  }
+
+  .search-icon,
+  .wishlist-icon,
+  .cart-icon,
+  .login-icon {
+    font-size: 1.2rem;
+  }
+
+  .dropdown-menu {
+    min-width: 120px;
+  }
+}

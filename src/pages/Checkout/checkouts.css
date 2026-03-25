@@ -1,0 +1,204 @@
+/* General resets and fonts */
+body, html {
+  margin: 0; padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f4faf4;
+  color: #1b3b18;
+}
+
+/* Container */
+.checkout-container {
+  max-width: 900px;
+  margin: 1.5rem auto;
+  padding: 1.5rem;
+  background: #e6f0e6;
+  border-radius: 10px;
+  box-shadow: 0 6px 15px rgba(0, 100, 0, 0.15);
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+/* Header */
+.checkout-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.back-btn {
+  background: transparent;
+  border: none;
+  font-size: 1.6rem;
+  color: #2e7d32;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+.back-btn:hover {
+  color: #145214;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-weight: 700;
+  font-size: 1.6rem;
+  color: #2e7d32;
+}
+
+.order-total {
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: #145214;
+}
+
+/* Section common styles */
+section {
+  background: #d6e9d6;
+  border-radius: 8px;
+  padding: 1.2rem 1.4rem;
+  margin-bottom: 1.8rem;
+  box-shadow: inset 0 0 5px #a0c6a0;
+  animation: fadeIn 0.8s ease forwards;
+}
+
+/* Section titles */
+section h2 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  color: #1b3b18;
+  border-bottom: 2px solid #2e7d32;
+  padding-bottom: 0.3rem;
+  font-weight: 700;
+}
+
+/* Form and inputs */
+form label {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #145214;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+select {
+  padding: 0.5rem 0.7rem;
+  font-size: 1rem;
+  border: 2px solid #a3d7a3;
+  border-radius: 6px;
+  transition: border-color 0.3s ease;
+  background: #f9fff9;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+select:focus {
+  outline: none;
+  border-color: #2e7d32;
+  box-shadow: 0 0 5px #2e7d32aa;
+}
+
+/* Checkbox and radio labels */
+label input[type="checkbox"],
+label input[type="radio"] {
+  margin-right: 0.5rem;
+  cursor: pointer;
+}
+
+/* Buttons */
+button, .back-btn {
+  cursor: pointer;
+}
+
+button[type="submit"],
+button[type="button"],
+.submit-order button {
+  background: #2e7d32;
+  border: none;
+  color: #f0fff0;
+  font-weight: 700;
+  padding: 0.65rem 1.3rem;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button[type="submit"]:hover,
+button[type="button"]:hover,
+.submit-order button:hover {
+  background: #1b3b18;
+  transform: scale(1.05);
+}
+
+/* Cart items */
+.cart-items {
+  background: #d0e4d0;
+  border-radius: 8px;
+  padding: 1rem 1.3rem;
+  margin-bottom: 1.5rem;
+  box-shadow: inset 0 0 5px #a0c6a0;
+  animation: fadeIn 0.8s ease forwards;
+}
+
+/* User email display */
+.user-email {
+  font-style: italic;
+  color: #145214;
+  margin-bottom: 1rem;
+}
+
+/* Responsive */
+@media screen and (max-width: 640px) {
+  .checkout-container {
+    margin: 0.8rem 1rem;
+    padding: 1rem;
+  }
+
+  .checkout-header {
+    flex-direction: column;
+    gap: 0.6rem;
+    align-items: flex-start;
+  }
+
+  .brand {
+    font-size: 1.3rem;
+  }
+
+  .order-total {
+    font-size: 1rem;
+  }
+
+  form label {
+    font-size: 0.9rem;
+  }
+
+  button[type="submit"], .submit-order button {
+    width: 100%;
+    font-size: 1.1rem;
+  }
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  } to {
+    opacity: 1;
+  }
+}

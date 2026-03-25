@@ -1,0 +1,78 @@
+.delivery-options {
+  background-color: #f0fff4;
+  border-radius: 16px;
+  padding: 20px;
+  margin: 20px;
+  box-shadow: 0 4px 10px rgba(0, 128, 0, 0.1);
+  font-family: 'Segoe UI', sans-serif;
+  color: #2f4f2f;
+}
+
+.delivery-options h4 {
+  color: #2e7d32;
+  margin-bottom: 8px;
+  font-size: 1.1rem;
+}
+
+.delivery-address,
+.shipping-options,
+.billing-options {
+  margin-bottom: 20px;
+}
+
+.delivery-address div {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-top: 5px;
+}
+
+select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #a5d6a7;
+  border-radius: 8px;
+  background-color: #e8f5e9;
+  color: #2e7d32;
+  font-size: 1rem;
+  transition: border 0.3s ease;
+}
+
+select:focus {
+  outline: none;
+  border-color: #66bb6a;
+  background-color: #f1f8e9;
+}
+
+.place-order-btn {
+  width: 100%;
+  padding: 12px;
+  background-color: #43a047;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.place-order-btn:hover {
+  background-color: #2e7d32;
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+  .delivery-options {
+    padding: 15px;
+    margin: 10px;
+  }
+
+  .place-order-btn {
+    font-size: 1rem;
+    padding: 10px;
+  }
+
+  select {
+    font-size: 0.95rem;
+    padding: 8px;
+  }
+}

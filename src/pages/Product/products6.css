@@ -1,0 +1,228 @@
+/* -------------------------
+   Transparent Page
+------------------------- */
+.product-page {
+  padding: 20px;
+  background: transparent;
+  backdrop-filter: none;
+  min-height: 100vh;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* -------------------------
+   Section Title
+------------------------- */
+.section-title {
+  text-align: center;
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 30px;
+  color: #222;
+}
+
+/* -------------------------
+   Product Grid
+------------------------- */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+/* -------------------------
+   Product Card
+------------------------- */
+.product-card {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 16px;
+  overflow: hidden;
+  padding: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  position: relative;
+  transition: transform 0.2s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-4px);
+}
+
+/* -------------------------
+   Image Container
+------------------------- */
+.image-hover-wrapper {
+  position: relative;
+  width: 100%;
+  height: 260px;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.product-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.image-hover-wrapper:hover .product-image {
+  transform: scale(1.05);
+}
+
+/* -------------------------
+   Add to Cart Hover Box (Slide Up)
+------------------------- */
+.add-to-cart-hover-box {
+  position: absolute;
+  bottom: -60px;
+  left: 0;
+  width: 100%;
+  background: transparent;
+  padding: 10px 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: bottom 0.35s ease;
+  border-top: 1px solid #ccc;
+  backdrop-filter: none;
+  z-index: 5;
+}
+
+.image-hover-wrapper:hover .add-to-cart-hover-box {
+  bottom: 0;
+}
+
+/* -------------------------
+   Quantity Controls
+------------------------- */
+.qty-controls {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.qtybtn {
+  background: none;
+  color: #222;
+  border: 1px solid #888;
+  padding: 4px 8px;
+  font-weight: bold;
+  font-size: 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.qtybtn:hover {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.qty-controls span {
+  color: #111;
+  font-size: 14px;
+  min-width: 20px;
+  text-align: center;
+  font-weight: bold;
+}
+
+/* -------------------------
+   Add to Cart Button
+------------------------- */
+.add-to-cart-btn {
+  background: none;
+  color: #2c7c3f;
+  font-weight: 600;
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: 1px solid #2c7c3f;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.add-to-cart-btn:hover {
+  background: rgba(44, 124, 63, 0.1);
+}
+
+.add-to-cart-btn:disabled {
+  border-color: #aaa;
+  color: #aaa;
+  cursor: not-allowed;
+}
+
+/* -------------------------
+   Product Info
+------------------------- */
+.product-name {
+  font-weight: 700;
+  font-size: 16px;
+  margin: 10px 0 6px;
+  color: #111;
+  text-align: center;
+}
+
+.product-price,
+.product-price-selected {
+  font-weight: 600;
+  font-size: 15px;
+  color: #333;
+  text-align: center;
+  margin: 4px 0;
+}
+
+/* -------------------------
+   Variant Buttons
+------------------------- */
+.product-variant-selector {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 6px 0;
+}
+
+.product-variant-btn {
+  padding: 4px 8px;
+  font-size: 13px;
+  border: 1px solid #ccc;
+  background: transparent;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.product-variant-btn:hover {
+  background: rgba(0, 128, 0, 0.05);
+}
+
+.product-variant-btn.active {
+  background: #2f8b3b;
+  color: white;
+  font-weight: bold;
+  border-color: #2f8b3b;
+}
+
+/* -------------------------
+   Responsive Adjustments
+------------------------- */
+@media (max-width: 768px) {
+  .image-hover-wrapper {
+    height: 220px;
+  }
+}
+
+@media (max-width: 480px) {
+  .image-hover-wrapper {
+    height: 180px;
+  }
+
+  .add-to-cart-hover-box {
+    flex-direction: column;
+    gap: 8px;
+    padding: 10px;
+  }
+
+  .add-to-cart-btn {
+    width: 100%;
+  }
+}
