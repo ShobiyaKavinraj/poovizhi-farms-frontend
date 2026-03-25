@@ -1,6 +1,6 @@
-import React, { useEffect, useState ,} from 'react';
-import { Link,useNavigate } from 'react-router-dom';
+import React, {  useState ,useEffect} from 'react';
 import axios from 'axios';
+import { Link,useNavigate } from 'react-router-dom';
 import { useCart } from '../../context/CartContext';
 // import { useWishlist } from './WishlistContext'; // Wishlist disabled
 import './product5.css';
@@ -12,16 +12,16 @@ const navigate = useNavigate();
 
 
 
-  const [products, setProducts] = useState([]);
+  const [products,setProducts] = useState([]);
   const [quantities, setQuantities] = useState({});
   const [selectedVariants, setSelectedVariants] = useState({});
 
-  // useEffect(() => {
-  //   // axios.get('http://localhost:5000/api/products')
-  //   axios.get('https://poovizhi-farms-backend.onrender.com/api/products')
-  //     .then(res => setProducts(res.data))
-  //     .catch(err => console.error('Error fetching products:', err));
-  // }, []);
+  useEffect(() => {
+    // axios.get('http://localhost:5000/api/products')
+    axios.get('https://poovizhi-farms-backend.onrender.com/api/products')
+      .then(res => setProducts(res.data))
+      .catch(err => console.error('Error fetching products:', err));
+  }, []);
 
   const handleQuantityChange = (id, delta) => {
     setQuantities(prev => ({
