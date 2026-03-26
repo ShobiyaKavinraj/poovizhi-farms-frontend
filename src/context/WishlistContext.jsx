@@ -41,7 +41,7 @@ export const WishlistProvider = ({ children }) => {
 
     try {
       const res = await axios.post(
-        'http://localhost:5000/api/wishlist',
+        'https://poovizhi-farms-backend.onrender.com/api/wishlist',
         {
           productId: item.productId || item._id,
           name: item.name,
@@ -78,7 +78,7 @@ export const WishlistProvider = ({ children }) => {
 
   const removeFromWishlist = async (productId, variantIndex, refetchAfterDelete = false) => {
     try {
-      await axios.delete(`http://localhost:5000/api/wishlist/${productId}/${variantIndex}`, {
+      await axios.delete(`https://poovizhi-farms-backend.onrender.com/api/wishlist/${productId}/${variantIndex}`, {
         headers: { Authorization: `Bearer ${localStorage.getItem('token')}` },
       });
 
