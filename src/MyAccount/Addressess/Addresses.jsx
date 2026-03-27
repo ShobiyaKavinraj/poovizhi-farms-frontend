@@ -3,10 +3,12 @@ import axios from "axios";
 import "./Addresses.css";
 
 const Addresses = () => {
-  const API = import.meta.env.VITE_API_BASE; // Backend URL from .env
+  const API = process.env.REACT_APP_API_BASE;
+
   const [addresses, setAddresses] = useState([]);
   const [isAdding, setIsAdding] = useState(false);
   const [editId, setEditId] = useState(null);
+
   const [currentAddress, setCurrentAddress] = useState({
     name: "",
     phone: "",
@@ -18,19 +20,18 @@ const Addresses = () => {
     state: "",
     country: ""
   });
+
   const [error, setError] = useState("");
 
   useEffect(() => {
-    fetchAddresses();
-  }, []);
-
   const fetchAddresses = async () => {
     try {
-      const response = await axios.get(`${API}/api/addresses`, {
+      const response = await axios.get(`${API}/addresses`, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`
         }
       });
+
       setAddresses(response.data);
     } catch (err) {
       console.error("Error fetching addresses:", err);
@@ -38,7 +39,11 @@ const Addresses = () => {
     }
   };
 
+  fetchAddresses();
+}, [API]);
+
   const handleSave = async () => {
+
     if (!currentAddress.name || !currentAddress.phone || !currentAddress.street) {
       setError("Name, phone, and street are required.");
       return;
@@ -46,26 +51,38 @@ const Addresses = () => {
 
     try {
       let response;
+
       if (editId) {
+
         // Update address
         response = await axios.put(
-          `${API}/api/addresses/${editId}`,
+          `${API}/addresses/${editId}`,
           currentAddress,
-          { headers: { Authorization: `Bearer ${localStorage.getItem("token")}` } }
+          {
+            headers: { Authorization: `Bearer ${localStorage.getItem("token")}` }
+          }
         );
+
         setAddresses((prev) =>
           prev.map((addr) => (addr._id === editId ? response.data : addr))
         );
+
       } else {
+
         // Add new address
         response = await axios.post(
-          `${API}/api/addresses`,
+          `${API}/addresses`,
           currentAddress,
-          { headers: { Authorization: `Bearer ${localStorage.getItem("token")}` } }
+          {
+            headers: { Authorization: `Bearer ${localStorage.getItem("token")}` }
+          }
         );
+
         setAddresses((prev) => [...prev, response.data]);
       }
+
       resetForm();
+
     } catch (err) {
       console.error(editId ? "Error updating address:" : "Error adding address:", err);
       setError("Failed to save address. Try again.");
@@ -73,12 +90,17 @@ const Addresses = () => {
   };
 
   const handleDelete = async (id) => {
+
     if (!window.confirm("Are you sure you want to delete this address?")) return;
+
     try {
-      await axios.delete(`${API}/api/addresses/${id}`, {
+
+      await axios.delete(`${API}/addresses/${id}`, {
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` }
       });
+
       setAddresses((prev) => prev.filter((addr) => addr._id !== id));
+
     } catch (err) {
       console.error("Error deleting address:", err);
       setError("Failed to delete address.");
@@ -103,13 +125,17 @@ const Addresses = () => {
       state: "",
       country: ""
     });
+
     setIsAdding(false);
     setEditId(null);
     setError("");
   };
 
   const handleChange = (e) => {
-    setCurrentAddress({ ...currentAddress, [e.target.name]: e.target.value });
+    setCurrentAddress({
+      ...currentAddress,
+      [e.target.name]: e.target.value
+    });
   };
 
   const goBack = () => {
@@ -118,32 +144,41 @@ const Addresses = () => {
 
   return (
     <div className="address-page">
+
       <div className="address-header">
         <button className="back-bttn" onClick={goBack}>←</button>
         <h2 className="address-title">Addresses</h2>
       </div>
 
       <div className="address-content">
+
         {error && <div className="error">{error}</div>}
 
         {addresses.length === 0 && !isAdding && (
-          <div className="no-address"><p>No addresses found</p></div>
+          <div className="no-address">
+            <p>No addresses found</p>
+          </div>
         )}
 
         {!isAdding && (
-          <button className="add-address-btn" onClick={() => setIsAdding(true)}>
+          <button
+            className="add-address-btn"
+            onClick={() => setIsAdding(true)}
+          >
             + Add New Address
           </button>
         )}
 
         {isAdding && (
           <div className="address-form">
+
             <h3>{editId ? "Edit Address" : "Add New Address"}</h3>
+
             <input type="text" name="name" placeholder="Full Name" value={currentAddress.name} onChange={handleChange} />
             <input type="text" name="phone" placeholder="Phone Number" value={currentAddress.phone} onChange={handleChange} />
             <input type="text" name="street" placeholder="Street Address" value={currentAddress.street} onChange={handleChange} />
-            <input type="text" name="apartment" placeholder="Apartment, Suite, etc. (Optional)" value={currentAddress.apartment} onChange={handleChange} />
-            <input type="text" name="company" placeholder="Company (Optional)" value={currentAddress.company} onChange={handleChange} />
+            <input type="text" name="apartment" placeholder="Apartment, Suite, etc." value={currentAddress.apartment} onChange={handleChange} />
+            <input type="text" name="company" placeholder="Company" value={currentAddress.company} onChange={handleChange} />
             <input type="text" name="postalCode" placeholder="Pincode" value={currentAddress.postalCode} onChange={handleChange} />
             <input type="text" name="city" placeholder="City" value={currentAddress.city} onChange={handleChange} />
 
@@ -167,25 +202,41 @@ const Addresses = () => {
               <button className="save-btn" onClick={handleSave}>
                 {editId ? "Update Address" : "Save Address"}
               </button>
-              <button className="cancel-btn" onClick={resetForm}>Cancel</button>
+
+              <button className="cancel-btn" onClick={resetForm}>
+                Cancel
+              </button>
             </div>
+
           </div>
         )}
 
         {addresses.map((addr) => (
           <div key={addr._id} className="address-card">
+
             <h4>{addr.name}</h4>
+
             <p>{addr.street}</p>
+
             {addr.apartment && <p>{addr.apartment}</p>}
             {addr.company && <p>{addr.company}</p>}
+
             <p>{addr.city} - {addr.postalCode}</p>
             <p>{addr.state}, {addr.country}</p>
+
             <div className="card-buttons">
-              <button className="edit-btn" onClick={() => handleEdit(addr)}>Edit</button>
-              <button className="delete-bttn" onClick={() => handleDelete(addr._id)}>Delete</button>
+              <button className="edit-btn" onClick={() => handleEdit(addr)}>
+                Edit
+              </button>
+
+              <button className="delete-bttn" onClick={() => handleDelete(addr._id)}>
+                Delete
+              </button>
             </div>
+
           </div>
         ))}
+
       </div>
     </div>
   );
